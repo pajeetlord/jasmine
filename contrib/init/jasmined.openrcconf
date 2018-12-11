@@ -1,0 +1,26 @@
+# /etc/conf.d/jasmined: config file for /etc/init.d/jasmined
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/jasmine/jasmine.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/jasmined"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/jasmined.pid"
+
+# Where to write jasmined data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/jasmined"
+
+# User and group to own jasmined process
+#BITCOIND_USER="jasmine"
+#BITCOIND_GROUP="jasmine"
+
+# Path to jasmined executable
+#BITCOIND_BIN="/usr/bin/jasmined"
+
+# Nice value to run jasmined under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""
