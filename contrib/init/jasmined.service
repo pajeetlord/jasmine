@@ -1,0 +1,26 @@
+[Unit]
+Description=Jasmine's distributed currency daemon
+After=network.target
+
+[Service]
+User=jasmine
+Group=jasmine
+
+Type=forking
+PIDFile=/var/lib/jasmined/jasmined.pid
+
+ExecStart=/usr/bin/jasmined -daemon -pid=/var/lib/jasmined/jasmined.pid \
+          -conf=/etc/jasmine/jasmine.conf -datadir=/var/lib/jasmined
+
+ExecStop=-/usr/bin/jasmine-cli -conf=/etc/jasmine/jasmine.conf \
+         -datadir=/var/lib/jasmined stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

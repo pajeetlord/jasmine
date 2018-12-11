@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Jasmine
+Comment=Jasmine P2P Cryptocurrency
+Comment[fr]=Jasmine, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Jasmine, eşten eşe kriptografik sanal para birimi
+Exec=jasmine-qt %u
+Terminal=false
+Type=Application
+Icon=jasmine128
+MimeType=x-scheme-handler/jasmine;
+Categories=Office;Finance;
