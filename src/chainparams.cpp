@@ -62,6 +62,26 @@ static const Checkpoints::CCheckpointData data = {
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
+static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
+    boost::assign::map_list_of
+    (0, uint256("0x00000359aa236b37c62c4a78e7b78804d100d5933b723f381bf8fcd173c880a9"));
+static const Checkpoints::CCheckpointData dataTestnet = {
+    &mapCheckpoints,
+    1544528326, // * UNIX timestamp of last checkpoint block
+    0,          // * total number of transactions between genesis and last checkpoint
+                //   (the tx=... number in the SetBestChain debug.log lines)
+    2000        // * estimated number of transactions per day after checkpoint
+};
+static Checkpoints::MapCheckpoints mapCheckpointsRegTest =
+    boost::assign::map_list_of
+    (0, uint256("0x00000359aa236b37c62c4a78e7b78804d100d5933b723f381bf8fcd173c880a9"));
+static const Checkpoints::CCheckpointData dataRegtest = {
+    &mapCheckpoints,
+    1544528326, // * UNIX timestamp of last checkpoint block
+    0,          // * total number of transactions between genesis and last checkpoint
+                //   (the tx=... number in the SetBestChain debug.log lines)
+    2000        // * estimated number of transactions per day after checkpoint
+};
 libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params(bool useModulusV1) const
 {
     assert(this);
@@ -236,24 +256,19 @@ public:
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
         nMaxMoneyOut = 43199500 * COIN;
-        nZerocoinStartHeight = 201576;
-        nZerocoinStartTime = 1501776000;
-        nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
-        nBlockRecalculateAccumulators = 9908000; //Trigger a recalculation of accumulators
-        nBlockFirstFraudulent = 9891737; //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 9891730; //Last valid accumulator checkpoint
-        nBlockEnforceInvalidUTXO = 9902850; //Start enforcing the invalid UTXO's
-        nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 444020; //!> The block that zerocoin v2 becomes active
-        nEnforceNewSporkKey = 1521604800; //!> Sporks signed after Wednesday, March 21, 2018 4:00:00 AM GMT must use the new spork key
-        nRejectOldSporkKey = 1522454400; //!> Reject old spork key after Saturday, March 31, 2018 12:00:00 AM GMT
-        
+        nZerocoinStartHeight = 1002;
+        nBlockEnforceSerialRange = 1004; //Enforce serial range starting this block
+        nBlockRecalculateAccumulators = 1005; //Trigger a recalculation of accumulators
+        nBlockFirstFraudulent = 1003; //First block that bad serials emerged
+        nBlockLastGoodCheckpoint = 1005; //Last valid accumulator checkpoint
+        nBlockEnforceInvalidUTXO = 1001; //Start enforcing the invalid UTXO's
+       
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1454124731;
-        genesis.nNonce = 2402015;
+        genesis.nTime = 1544528326;
+        genesis.nNonce = 6959175;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818"));
+        assert(hashGenesisBlock == uint256("00000359aa236b37c62c4a78e7b78804d100d5933b723f381bf8fcd173c880a9"));
         /*
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -325,7 +340,7 @@ public:
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 51476;
-        assert(hashGenesisBlock == uint256("0x4f023a2120d9127b21bbad01724fdb79b519f593f2a85b60d3d79160ec5f29df"));
+        assert(hashGenesisBlock == uint256("00000359aa236b37c62c4a78e7b78804d100d5933b723f381bf8fcd173c880a9"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
