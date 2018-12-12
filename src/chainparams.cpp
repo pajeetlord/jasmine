@@ -62,6 +62,21 @@ static const Checkpoints::CCheckpointData data = {
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
+static const Checkpoints::CCheckpointData dataTestnet = {
+    &mapCheckpoints,
+    1544528326, // * UNIX timestamp of last checkpoint block
+    0, // * total number of transactions between genesis and last checkpoint
+    // (the tx=... number in the SetBestChain debug.log lines)
+    2000 // * estimated number of transactions per day after checkpoint
+};
+
+static const Checkpoints::CCheckpointData dataRegtest = {
+    &mapCheckpoints,
+    1544528326, // * UNIX timestamp of last checkpoint block
+    0, // * total number of transactions between genesis and last checkpoint
+    // (the tx=... number in the SetBestChain debug.log lines)
+    2000 // * estimated number of transactions per day after checkpoint
+};
 libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params(bool useModulusV1) const
 {
     assert(this);
