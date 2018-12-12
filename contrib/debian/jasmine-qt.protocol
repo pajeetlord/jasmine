@@ -1,6 +1,6 @@
 [Protocol]
-exec=pivx-qt '%u'
-protocol=pivx
+exec=jasmine-qt '%u'
+protocol=jasmine
 input=none
 output=none
 helper=true

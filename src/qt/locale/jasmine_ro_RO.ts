@@ -192,6 +192,6 @@
     <name>ZPivControlDialog</name>
     </context>
 <context>
-    <name>pivx-core</name>
+    <name>jasmine-core</name>
     </context>
 </TS>

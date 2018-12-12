@@ -1,10 +1,10 @@
 Sample configuration files for:
 
-SystemD: pivxd.service
-Upstart: pivxd.conf
-OpenRC:  pivxd.openrc
-         pivxd.openrcconf
-CentOS:  pivxd.init
+SystemD: jasmined.service
+Upstart: jasmined.conf
+OpenRC:  jasmined.openrc
+         jasmined.openrcconf
+CentOS:  jasmined.init
 
 have been made available to assist packagers in creating node packages here.
 

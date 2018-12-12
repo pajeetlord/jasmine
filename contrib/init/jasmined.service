@@ -1,19 +1,19 @@
 [Unit]
-Description=PIVX's distributed currency daemon
+Description=Jasmine's distributed currency daemon
 After=network.target
 
 [Service]
-User=pivx
-Group=pivx
+User=jasmine
+Group=jasmine
 
 Type=forking
-PIDFile=/var/lib/pivxd/pivxd.pid
+PIDFile=/var/lib/jasmined/jasmined.pid
 
-ExecStart=/usr/bin/pivxd -daemon -pid=/var/lib/pivxd/pivxd.pid \
-          -conf=/etc/pivx/pivx.conf -datadir=/var/lib/pivxd
+ExecStart=/usr/bin/jasmined -daemon -pid=/var/lib/jasmined/jasmined.pid \
+          -conf=/etc/jasmine/jasmine.conf -datadir=/var/lib/jasmined
 
-ExecStop=-/usr/bin/pivx-cli -conf=/etc/pivx/pivx.conf \
-         -datadir=/var/lib/pivxd stop
+ExecStop=-/usr/bin/jasmine-cli -conf=/etc/jasmine/jasmine.conf \
+         -datadir=/var/lib/jasmined stop
 
 Restart=always
 PrivateTmp=true
