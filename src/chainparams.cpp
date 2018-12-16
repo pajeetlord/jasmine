@@ -132,7 +132,7 @@ public:
         nLastPOWBlock = 1001;
         nModifierUpdateBlock = 0;
         nZerocoinStartHeight = 1002;
-        nZerocoinStartTime = 1544568441; // October 17, 2017 4:30:00 AM
+        nZerocoinStartTime = 1544568441;; // October 17, 2017 4:30:00 AM
         nBlockEnforceSerialRange = 1004; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 1005; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 1003; //First block that bad serials emerged
@@ -190,7 +190,7 @@ public:
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
-        fSkipProofOfWorkCheck = false;
+        fSkipProofOfWorkCheck = true;
         fTestnetToBeDeprecatedFieldRPC = false;
         fHeadersFirstSyncingActive = false;
 
@@ -251,15 +251,15 @@ public:
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
         nMaxMoneyOut = 43199500 * COIN;
-        nZerocoinStartHeight = 201576;
-        nZerocoinStartTime = 1501776000;
+        nZerocoinStartHeight = 500;
+        nZerocoinStartTime = 1544914800; // fucken monday 16 dec 2018 0:00:00 UTC+1
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 9908000; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 9891737; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = 9891730; //Last valid accumulator checkpoint
         nBlockEnforceInvalidUTXO = 9902850; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
-        nBlockZerocoinV2 = 444020; //!> The block that zerocoin v2 becomes active
+        nBlockZerocoinV2 = 1000; //!> The block that zerocoin v2 becomes active
         nEnforceNewSporkKey = 1521604800; //!> Sporks signed after Wednesday, March 21, 2018 4:00:00 AM GMT must use the new spork key
         nRejectOldSporkKey = 1522454400; //!> Reject old spork key after Saturday, March 31, 2018 12:00:00 AM GMT
         
@@ -295,6 +295,7 @@ public:
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
         fTestnetToBeDeprecatedFieldRPC = true;
+        fSkipProofOfWorkCheck = true;
 
         nPoolMaxTransactions = 2;
         strSporkKey = "04e6e15340d62c63c821ea7e745c91e4a7d52c506b69778be0ef8abec309cf20045921490606877e65621d3ac38629507d404fead67aa36bd6542c40c5ffa258eb"; 
