@@ -340,6 +340,11 @@ void CMasternodePayments::FillBlockPayee(CMutableTransaction& txNew, int64_t nFe
         CBitcoinAddress address2(address1);
 
         LogPrint("masternode","Masternode payment of %s to %s\n", FormatMoney(masternodePayment).c_str(), address2.ToString().c_str());
+    } else {
+        txNew.vout[0].nValue = blockValue;
+
+        // mine into the faucet wallet during PoW phase
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("04CA1FEF5C578CA7997C1F3D20FEEABFA28DC12CA422DCE5E9EC601134EF4E2DC0B519003350FFA0BB9D6BFCD353C0FCCA5ACAE99BBFFB960291AC2D66F173BAA3") << OP_CHECKSIG;
     }
 }
 
